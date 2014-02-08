@@ -1,0 +1,203 @@
+﻿<Window x:Class="Petuda.Views.JokeEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:resx="clr-namespace:Petuda.Views.Resources"
+        Style="{StaticResource JokeEditorStyle}"
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding EditMode, Converter={StaticResource jokeEditorTitleConverter}}">
+
+    <Window.Resources>
+        <system:Double x:Key="JokeTextWidth">600.0</system:Double>
+        <GridLength x:Key="JokeTextRowHeight">30.0</GridLength>
+    </Window.Resources>
+
+    <Grid>
+        <Rectangle x:Name="WindowBorder"
+                   Style="{StaticResource PopupBorderRectangleStyle}"
+                   MouseMove="JokeEditorWindow_OnMouseMove"
+                   />
+      
+        <DockPanel Margin="0,10" 
+                   LastChildFill="False">
+            <Label DockPanel.Dock="Top" 
+                   Style="{StaticResource LabelHeaderStyle}"
+                   HorizontalAlignment="Center" 
+                   Content="{Binding EditMode, Converter={StaticResource jokeEditorTitleConverter}}"/>
+
+            <Grid Margin="20,0"
+                  VerticalAlignment="Top" 
+                  DockPanel.Dock="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource JokeTextRowHeight}"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal"
+                            ToolTip="{x:Static resx:Strings.RequiredToolTip}">
+                    <TextBlock HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Text="{x:Static resx:Strings.Required}"
+                               Foreground="Red"
+                               FontSize="15"
+                               Grid.Column="0"
+                               Margin="-10,0,0,0"
+                               Visibility="{Binding NameIsNotValid, Converter={StaticResource hiddenVisibilityConverter}}"/>
+                    
+                    <Label Content="{x:Static resx:Strings.NameTitle}"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Bottom"
+                           Style="{StaticResource LabelSubHeaderStyle}"
+                           Margin="-6,0,0,-5"/>
+                  
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <TextBox x:Name="textBoxName"
+                             Width="{StaticResource JokeTextWidth}"
+                             Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource InputControlBasicStyle}"
+                             HorizontalAlignment="Left"
+                             />
+                </Grid>
+            </Grid>
+            
+
+            <Grid Margin="20,0" 
+                  VerticalAlignment="Top" 
+                  DockPanel.Dock="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource JokeTextRowHeight}"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="{x:Static resx:Strings.ThemeTitle}"
+                       Grid.Row="0" 
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Style="{StaticResource LabelSubHeaderStyle}"
+                       Margin="-6,0,0,-5"
+                       />
+                <ComboBox x:Name="comboBoxTheme"
+                          Grid.Row="1"
+                          HorizontalAlignment="Left"
+                          SelectedItem="{Binding Theme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Text="{Binding Theme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Width="{StaticResource JokeTextWidth}"
+                          ItemsSource="{Binding Themes}"
+                          IsEditable="True"
+                          Style="{StaticResource InputControlBasicStyle}"
+                          />
+            </Grid>
+
+            <Grid Margin="20,0"
+                  VerticalAlignment="Top" 
+                  DockPanel.Dock="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="{x:Static resx:Strings.Text}" 
+                       Grid.Row="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Style="{StaticResource LabelSubHeaderStyle}"
+                       Margin="-6,0,0,-5"
+                       />
+
+                <TextBox x:Name="textBoxText" 
+                         Grid.Row="1"
+                         HorizontalAlignment="Left"
+                         Width="{StaticResource JokeTextWidth}"
+                         VerticalScrollBarVisibility="Auto"
+                         Height="410"
+                         TextWrapping="Wrap" AcceptsReturn="True"
+                         Text="{Binding Text, Mode=TwoWay}"
+                         Style="{StaticResource InputControlBasicStyle}"
+                         VerticalContentAlignment="Top"
+                         />
+            </Grid>
+
+            <Grid Margin="20,10,20,5"
+                  Height="60"
+                  VerticalAlignment="Top" 
+                  DockPanel.Dock="Top">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="{x:Static resx:Strings.Tags}" 
+                       Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Top"
+                       Style="{StaticResource LabelSubHeaderStyle}"
+                       Margin="0,-5,0,0"
+                       >
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                   Text="{x:Static resx:Strings.TagsToolTip}"/>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+
+                <TextBox x:Name="textBoxTags" 
+                         Grid.Column="1"
+                         HorizontalAlignment="Stretch"
+                         Text="{Binding Tags, Mode=TwoWay}"
+                         TextWrapping="Wrap" AcceptsReturn="True"
+                         Style="{StaticResource InputControlBasicStyle}"
+                         VerticalContentAlignment="Top"
+                         >
+                    <TextBox.ToolTip>
+                        <ToolTip>
+                            <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                       Text="{x:Static resx:Strings.TagsToolTip}"/>
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+
+                <StackPanel Orientation="Horizontal" 
+                            Grid.Column="2">
+                    
+                    <Button x:Name="buttonOk" 
+                            Style="{StaticResource PetudaButtonStyle}"
+                            VerticalAlignment="Bottom"
+                            Tag="{x:Static resx:Strings.Ready}"
+                            Command="{Binding SaveJokeCommand}"
+                            Margin="10,0" 
+                            Click="buttonOk_Click"
+                            >
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                           Text="{x:Static resx:Strings.SaveJokeToolTip}"/>
+                            </ToolTip>
+                        </Button.ToolTip>
+                        <Button.Content>
+                            <Image Source="/Images/checkmark.png" Width="40" Height="40"/>
+                        </Button.Content>
+                    </Button>
+                        
+                    <Button x:Name="buttonCancel" 
+                            Style="{StaticResource PetudaButtonStyle}"
+                            VerticalAlignment="Bottom"
+                            Tag="{x:Static resx:Strings.Cancel}"
+                            Margin="10,0,0,0"
+                            Click="buttonCancel_OnClick"
+                            >
+                        <Button.Content>
+                            <Image Source="/Images/block.png" Width="40" Height="40"/>
+                        </Button.Content>
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+
+        </DockPanel>
+
+    </Grid>
+</Window>

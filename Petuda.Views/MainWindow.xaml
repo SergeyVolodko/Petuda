@@ -1,0 +1,281 @@
+﻿<Window x:Class="Petuda.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resx="clr-namespace:Petuda.Views.Resources"
+        xmlns:controls="clr-namespace:Petuda.Views.Controls" xmlns:system="clr-namespace:System;assembly=mscorlib"
+        Style="{StaticResource MainWindowStyle}"
+        Title="{x:Static resx:Strings.Petuda}"
+        x:Name="pageRoot"
+        DragOver="pageRoot_DragOver"
+        Loaded="MainWindow_OnLoaded"
+        >
+   
+    <Grid Margin="10,10,0,0">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" >
+            <DockPanel>
+                <Popup x:Name="popupDraggingJoke"
+                       IsHitTestVisible="False"
+                       Placement="RelativePoint"
+                       PlacementTarget="{Binding ElementName=pageRoot}"
+                       AllowsTransparency="True"
+                       IsOpen="{Binding IsDragging}">
+                    <controls:DragJokePopupContent/>
+                </Popup>
+
+                <StackPanel x:Name="stackPanelHeader" DockPanel.Dock="Top">
+
+                    <DockPanel Margin="0,5" LastChildFill="False">
+                        <Button x:Name="buttonAddJoke"
+                                Style="{StaticResource PetudaButtonStyle}"
+                                Tag="{x:Static resx:Strings.Create}"
+                                Command="{Binding AddJokeCommand}"
+                                ToolTip="{x:Static resx:Strings.CreateJokeToolTip}"
+                                >
+                            <Button.Content>
+                                <Image Source="/Images/plus.png" Width="30" Height="30"/>
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="buttonEditJoke" 
+                                Style="{StaticResource PetudaButtonStyle}"
+                                Tag="{x:Static resx:Strings.Edit}"
+                                Width="90"
+                                Command="{Binding EditJokeCommand}"
+                                >
+                            <Button.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                               Text="{x:Static resx:Strings.EditJokeToolTip}"/>
+                                </ToolTip>
+                            </Button.ToolTip>
+                            <Button.Content>
+                                <Image Source="/Images/edit.png" Width="30" Height="30"/>
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="buttonDeleteJoke"
+                                Style="{StaticResource PetudaButtonStyle}"
+                                Command="{Binding DeleteJokeCommand}"
+                                Tag="{x:Static resx:Strings.Delete}"
+                                >
+                            <Button.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                               Text="{x:Static resx:Strings.DeleteJokeToolTip}"/>
+                                </ToolTip>
+                            </Button.ToolTip>
+                            <Button.Content>
+                                <Image Source="/Images/delete.png" Width="30" Height="30"/>
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="buttonAddJokeToScript"
+                                Style="{StaticResource PetudaButtonStyle}"
+                                Tag="{x:Static resx:Strings.AddToScript}"
+                                DockPanel.Dock="Left"
+                                Command="{Binding AddJokeToScriptCommand}"
+                                IsEnabled="{Binding SelectedJoke, Converter={StaticResource isNotNullConverter}}"
+                                Margin="100,0,0,0"
+                                >
+                            <Button.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                               Text="{x:Static resx:Strings.AddJokeToScriptToolTip}"/>
+                                </ToolTip>
+                            </Button.ToolTip>
+                            <Button.Content>
+                                <Image Source="/Images/puzzle.png" Width="30" Height="30"/>
+                            </Button.Content>
+                        </Button>
+                    </DockPanel>
+
+                    <Expander Header="{x:Static resx:Strings.Search}"
+                              Style="{StaticResource PetudaVerticalExpanderStyle}"
+                              Width="{Binding ActualWidth, ElementName=dataGridJokes}"
+                              Margin="-10,5,0,0">
+                        <StackPanel Margin="-5,10,0,0">
+                            <WrapPanel>
+                                <StackPanel Orientation="Horizontal"
+                                            Margin="0,0,0,0">
+                                    <StackPanel.ToolTip>
+                                        <ToolTip>
+                                            <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                                       Text="{x:Static resx:Strings.TextFilterToolTip}"/>
+                                        </ToolTip>
+                                    </StackPanel.ToolTip>
+                                    <Label Content="{x:Static resx:Strings.Text}" Style="{StaticResource LabelSubHeaderStyle}"/>
+                                    <TextBox x:Name="textBoxTextFilter"
+                                             Style="{StaticResource FilterInputControlBasicStyle}"
+                                             Width="250"
+                                             Text="{Binding TextFilter, UpdateSourceTrigger=PropertyChanged}"
+                                             />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel.ToolTip>
+                                        <ToolTip>
+                                            <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                                       Text="{x:Static resx:Strings.ThemeFilterToolTip}"/>
+                                        </ToolTip>
+                                    </StackPanel.ToolTip>
+                                    <Label Content="{x:Static resx:Strings.ThemeTitle}"
+                                           Style="{StaticResource LabelSubHeaderStyle}"/>
+                                    <ComboBox x:Name="comboBoxThemeFilter"
+                                              Style="{StaticResource FilterInputControlBasicStyle}"
+                                              SelectedItem="{Binding ThemeFilter, UpdateSourceTrigger=PropertyChanged}"
+                                              Width="200"
+                                              ItemsSource="{Binding Themes}"/>
+                                </StackPanel>
+
+                                <!--<StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+                                    <StackPanel.ToolTip>
+                                        <ToolTip>
+                                            <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                                       Text="{x:Static resx:Strings.LeagueFilterToolTip}"/>
+                                        </ToolTip>
+                                    </StackPanel.ToolTip>
+                                    <Label Content="{x:Static resx:Strings.League}"
+                                           Style="{StaticResource LabelSubHeaderStyle}"/>
+                                    <ComboBox x:Name="comboBoxLeagueFilter"
+                                              SelectedItem="{Binding LeagueFilter, Mode=TwoWay}"
+                                              Style="{StaticResource FilterInputControlBasicStyle}"
+                                              Width="200"
+                                              ItemsSource="{Binding Leagues}"/>
+                                    <CheckBox x:Name="checkBoxNeverUsed"
+                                              Style="{StaticResource FilterCheckBoxStyle}"
+                                              Content="{x:Static resx:Strings.NotShot}"
+                                              IsChecked="{Binding IsNeverUsed}"
+                                              />
+                                </StackPanel>-->
+
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel.ToolTip>
+                                        <ToolTip>
+                                            <TextBlock Style="{StaticResource TextBlockToolTipStyle}"
+                                                       Text="{x:Static resx:Strings.DateFilterToolTip}"/>
+                                        </ToolTip>
+                                    </StackPanel.ToolTip>
+                                    <Label Content="{x:Static resx:Strings.DateTitle}"
+                                           Style="{StaticResource LabelSubHeaderStyle}"/>
+                                    <DatePicker x:Name="datePickerFrom"
+                                                SelectedDate="{Binding DateFromFilter}"
+                                                Style="{StaticResource FilterInputControlBasicStyle}" 
+                                                FirstDayOfWeek="Monday"
+                                                Loaded="DatePicker_OnLoaded"/>
+                                    <Label Content="- "
+                                           Style="{StaticResource LabelSubHeaderStyle}"/>
+                                    <DatePicker x:Name="datePickerTo"
+                                                Style="{StaticResource FilterInputControlBasicStyle}"
+                                                SelectedDate="{Binding DateToFilter}" 
+                                                FirstDayOfWeek="Monday"
+                                                Loaded="DatePicker_OnLoaded"/>
+                                </StackPanel>
+
+                            </WrapPanel>
+
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+
+                <Grid DockPanel.Dock="Top">
+                    <DataGrid x:Name="dataGridJokes"
+                              Style="{StaticResource PetudaDataGridStyle}"
+                              ItemsSource="{Binding Jokes, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedJoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"
+                              MouseDoubleClick="dataGridJokes_MouseDoubleClick"
+                              PreviewMouseMove="dataGridJokes_PreviewMouseMove"
+                              SizeChanged="DataGridJokes_OnSizeChanged">
+                        <DataGrid.Width>
+                            <MultiBinding Converter="{StaticResource multiMinusConverter}"
+                                          ConverterParameter="{StaticResource SumOfMarginsOnTheMainPage}">
+                                <Binding Path="ActualWidth" ElementName="pageRoot"/>
+                                <Binding Path="ActualWidth" ElementName="expanderScripts"/>
+                            </MultiBinding>
+                        </DataGrid.Width>
+
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="LightBlue" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+
+                        <DataGrid.Resources>
+                            <system:Double x:Key="JokeDateMinWidth">80.0</system:Double>
+                            <system:Double x:Key="JokeThemeMinWidth">120.0</system:Double>
+                        </DataGrid.Resources>
+                        
+                        <DataGrid.Columns>
+                            <!--Attention! Jokes column width calculations are in codebehind.-->
+                            <DataGridTemplateColumn Header="{x:Static resx:Strings.Joke}" CanUserResize="False">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel MaxHeight="{StaticResource PetudaMaxRowHeight}"
+                                                    Margin="5">
+                                            <Label Content="{Binding Name}" 
+                                                   Style="{StaticResource BasicTextStyle}"
+                                                   FontWeight="DemiBold"/>
+                                            <TextBlock Text="{Binding Text}"
+                                                       Style="{StaticResource BasicTextBlockStyle}"/>
+                                        </StackPanel>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn MinWidth="{StaticResource JokeThemeMinWidth}"
+                                                    Width="120"
+                                                    Header="{x:Static resx:Strings.Theme}" 
+                                                    CanUserResize="False">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Label Content="{Binding Theme}"
+                                               VerticalAlignment="Center"
+                                               FontWeight="DemiBold"
+                                               Style="{StaticResource BasicTextStyle}"
+                                               ToolTip="{Binding Theme}"
+                                               />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn MinWidth="{StaticResource JokeDateMinWidth}"
+                                                Width="80"
+                                                Header="{x:Static resx:Strings.Date}" 
+                                                Binding="{Binding Date, StringFormat='{}{0:dd.MMM.yyyy}'}"
+                                                FontFamily="{StaticResource BasicTextFontFamily}"
+                                                FontWeight="DemiBold"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <TextBlock x:Name="textBlockNoJokesInformationMessage"
+                               VerticalAlignment="Center" 
+                               TextWrapping="Wrap" 
+                               TextAlignment="Center" 
+                               Margin="10"
+                               FontSize="16"
+                               Text="{Binding NoJokesMessage}"
+                               Width="{Binding ActualWidth, ElementName=dataGridJokes}"
+                               MouseLeftButtonDown="textBlockNoJokesInformationMessage_OnMouseLeftButtonDown"/>
+                    <Rectangle Style="{StaticResource UnderlineDatagridHeader}"
+                               Margin="0,40,10,0"/>
+                </Grid>
+            </DockPanel>
+
+            <Expander x:Name="expanderScripts" 
+                      Header="{x:Static resx:Strings.Script}"
+                      Style="{StaticResource PetudaHorizontalExpanderStyle}"
+                      ExpandDirection="Right" 
+                      Expanded="expanderScripts_Expanded"
+                      Margin="0,0,5,5"
+                      MinWidth="60"
+                      Tag="{x:Static resx:Strings.ScriptsToolTip}">
+                
+                <Grid x:Name="gridScriptPanel" Width="500" >
+                    <controls:ScriptPanel x:Name="scriptPanel"
+                                          HorizontalAlignment="Left"/>
+                </Grid>
+            </Expander>
+        </StackPanel>
+    </Grid>
+</Window>

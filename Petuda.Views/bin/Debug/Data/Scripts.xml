@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<ArrayOfScript xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Script ID="e8286163-2c45-4761-9598-65001aa165fa">
+    <Name>тестовый</Name>
+    <GameDate xsi:nil="true" />
+    <JokesIDs>
+      <guid>211c0e85-b964-4654-9329-52a27193e25c</guid>
+      <guid>b7a88307-2c6c-48fa-9b6b-af511776139c</guid>
+      <guid>c95acdca-86b2-4a38-908a-5c8afb878e95</guid>
+      <guid>0847eb41-83b9-447f-af40-7ae3c84f17cb</guid>
+      <guid>8fca0a99-a6f8-4155-9ef8-a1532f453be4</guid>
+    </JokesIDs>
+  </Script>
+  <Script ID="0daf6e05-fbc8-486a-a88a-4dbda1ac5058">
+    <Name>123213sffasfasf</Name>
+    <GameDate xsi:nil="true" />
+    <JokesIDs>
+      <guid>c95acdca-86b2-4a38-908a-5c8afb878e95</guid>
+      <guid>aa5d3522-7ddf-4e79-a69b-c59f7c1df799</guid>
+      <guid>8fca0a99-a6f8-4155-9ef8-a1532f453be4</guid>
+      <guid>422faa63-fd24-4e4f-a8d4-03ec3f0ab8f5</guid>
+      <guid>b7a88307-2c6c-48fa-9b6b-af511776139c</guid>
+      <guid>0847eb41-83b9-447f-af40-7ae3c84f17cb</guid>
+    </JokesIDs>
+  </Script>
+</ArrayOfScript>

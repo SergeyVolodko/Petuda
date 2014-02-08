@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Petuda.Views.exe" version="1.0.0.0" publicKeyToken="99d6095331d76637" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Images\Application.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Petuda.Views" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Petuda.Views.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Petuda.Model.DDD.dll" size="16384">
+      <assemblyIdentity name="Petuda.Model.DDD" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>UzXzh4aKRHHBjEHmbjm+O/R+qDg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Petuda.ViewModels.dll" size="40960">
+      <assemblyIdentity name="Petuda.ViewModels" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>dr9r32UZG/z1sG05ptTSV4Us690=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Petuda.Views.exe" size="1294336">
+      <assemblyIdentity name="Petuda.Views" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>UpAHCpElI/Rt4f6RScb2uTcmIHQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PetudaDAL.dll" size="9728">
+      <assemblyIdentity name="PetudaDAL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>YpxMOMTgZsWQxIk70NYfIyxGa6c=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Images\Application.ico" size="370070">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>rYWeQtAryNZb3MDQMj+cek9UjuU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Petuda.Views.exe.config" size="159">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>1MarUy3RuVvHLdw5ozZo3o7j39I=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Note-Serg\Сергей" issuerKeyHash="b82a90778afd1d6bc8974768652bc07da9ee5543" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>rH0IcZMSLJYvu2lCsalJp2Zb9sU=</DigestValue></Reference></SignedInfo><SignatureValue>RiCI8L7pnAdycg8GTB3ey0ah+ZYMSZ3DSBb2W0wyzjkHVbe9rRATCDFAdnE4lOZcMdOafMlPAXqmw3rjIt+cTr1SCEeex6QOmepctMsVi8S6HdXG3bdJAz1cKjEF+RO0jTZnHeNkkkiEdu8fKdz9/v/C+PKtb7kjClD7H84RZ2A=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sR1/jSQYd8G5IBoY2f4VWKSJDeldZx5VtLXsNr29lLkT8dDze9sdbjjNwA+1gyFFxz5QqnGEFgxTtSvit6YXjLjVVEkv02M4UkAAJkNl4zcHe4hd0mKFrwVYGzRv4wxpAxffr08+uYhmaKtQA1tFu1JXTZcMWekBuNpmJT29968=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="c5f65b66a749a9b14269bb2f962c129371087dac" Description="" Url=""><as:assemblyIdentity name="Petuda.Views.exe" version="1.0.0.0" publicKeyToken="99d6095331d76637" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Note-Serg\Сергей</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>3iC46YNLV0HDmz+Nl5Ta8ja5wOA=</DigestValue></Reference></SignedInfo><SignatureValue>M9/e9hTXjMWxUped0QznG9L5ywFhrnNKbwk+UjOcIq/izhPt9caVzfUwfM6AkCEZBCR6h5xYy1nGCA7mUZssTjIncPhq+kxSuoTgq0MQb9W9WC7FwDv2UJvv0TksBeC1fiyKjUlfs67bOXl7aCG9zYuyYzTvPpQfg+f+LwgAIxM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sR1/jSQYd8G5IBoY2f4VWKSJDeldZx5VtLXsNr29lLkT8dDze9sdbjjNwA+1gyFFxz5QqnGEFgxTtSvit6YXjLjVVEkv02M4UkAAJkNl4zcHe4hd0mKFrwVYGzRv4wxpAxffr08+uYhmaKtQA1tFu1JXTZcMWekBuNpmJT29968=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQGNo6OdiEf6tLllrNuiLxsTANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAATgBvAHQAZQAtAFMAZQByAGcAXAQhBDUEQAQzBDUEOTAeFw0xMzEyMjMxMjUxNTdaFw0xNDEyMjMxODUxNTdaMCsxKTAnBgNVBAMeIABOAG8AdABlAC0AUwBlAHIAZwBcBCEENQRABDMENQQ5MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxHX+NJBh3wbkgGhjZ/hVYpIkN6V1nHlW0tew2vb2UuRPx0PN72x1uOM3AD7WDIUXHPlCqcYQWDFO1K+K3pheMuNVUSS/TYzhSQAAmQ2XjNwd7iF3SYoWvBVgbNG/jDGkDF9+vTz65iGZoq1ADW0W7UldNlwxZ6QG42mYlPb33rwIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAJYN31Eh0PyU8w5iEDzjoXl4pBwmRepfS7kRItvBauQYm/3NltKcNsPFEJjKYfKIDKva/YiZwc7eL+saVGaOxEmsenInXFovCNjFvPqjVN8HVXOeK0brXBc+Xu11Y4eNd8TJGmHNs27Vf0c+A72vNkuf3f45AaBUmG4b8i7yLCmf</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

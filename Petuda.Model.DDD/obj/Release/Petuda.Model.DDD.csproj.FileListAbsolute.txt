@@ -1,0 +1,10 @@
+C:\Users\svolodko\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\bin\Release\Petuda.Model.DDD.dll
+C:\Users\svolodko\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\bin\Release\Petuda.Model.DDD.pdb
+C:\Users\svolodko\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Release\Petuda.Model.DDD.csprojResolveAssemblyReference.cache
+C:\Users\svolodko\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Release\Petuda.Model.DDD.dll
+C:\Users\svolodko\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Release\Petuda.Model.DDD.pdb
+E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\bin\Release\Petuda.Model.DDD.dll
+E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\bin\Release\Petuda.Model.DDD.pdb
+E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Release\Petuda.Model.DDD.dll
+E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Release\Petuda.Model.DDD.pdb
+E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Release\Petuda.Model.DDD.csprojResolveAssemblyReference.cache

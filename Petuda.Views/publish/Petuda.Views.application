@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <assemblyIdentity name="Petuda.Views.application" version="1.0.0.0" publicKeyToken="99d6095331d76637" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:publisher="Petuda.Views" asmv2:product="Petuda.Views" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <deployment install="true" mapFileExtensions="true">
+    <subscription>
+      <update>
+        <beforeApplicationStartup />
+      </update>
+    </subscription>
+    <deploymentProvider codebase="https://www.dropbox.com/sh/pwxmkqsax5205sf/txoYz0FNr2/Petuda.Views.application" />
+  </deployment>
+  <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
+    <framework targetVersion="4.0" profile="Client" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
+  </compatibleFrameworks>
+  <dependency>
+    <dependentAssembly dependencyType="install" codebase="Application Files\Petuda.Views_1_0_0_0\Petuda.Views.exe.manifest" size="9485">
+      <assemblyIdentity name="Petuda.Views.exe" version="1.0.0.0" publicKeyToken="99d6095331d76637" language="neutral" processorArchitecture="msil" type="win32" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>zRAxxVh6eUN98j4/YXrDS36hiAg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=Note-Serg\Сергей" issuerKeyHash="b82a90778afd1d6bc8974768652bc07da9ee5543" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>MwWlsSrul/18cup8p/OnKL+YbRo=</DigestValue></Reference></SignedInfo><SignatureValue>Nqi+SrlXB35r1OdhfJCWTr+YwVdmLCWEwO8K68+VLra24GoI3zbWCLUcM+ACugakX5YH2h8eIVHrkBqW4Vsb9cFAlliJjd2MkzdSzs/TkYvJtHPLl8te5C9mfsfBwsFXg3mHDj9wLVPEFulac7n9IcDKUfvN2w3OtwQkA9FWMaQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sR1/jSQYd8G5IBoY2f4VWKSJDeldZx5VtLXsNr29lLkT8dDze9sdbjjNwA+1gyFFxz5QqnGEFgxTtSvit6YXjLjVVEkv02M4UkAAJkNl4zcHe4hd0mKFrwVYGzRv4wxpAxffr08+uYhmaKtQA1tFu1JXTZcMWekBuNpmJT29968=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="1a6d98bf28a7f3a77cea727cfd97ee2ab1a50533" Description="" Url=""><as:assemblyIdentity name="Petuda.Views.application" version="1.0.0.0" publicKeyToken="99d6095331d76637" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Note-Serg\Сергей</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>qoBqmGfRbZmRpWqejc2zYGSAAUc=</DigestValue></Reference></SignedInfo><SignatureValue>IROHzkgc4goz2TCZiDiJ9tJvt9B7tr2K3XaO7s5eGjdjUOI6ucFe3GqUcLvKrD+QfmmD1gjHIJJLEyIk3mUhAX6/ZUhN6YG7f7mcYcpoULAqFA5zxA7QfNw3IU5cRjX7z13JoOYccS4OpMJxnERwOQopCvEc0o57kOne2vceHw4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sR1/jSQYd8G5IBoY2f4VWKSJDeldZx5VtLXsNr29lLkT8dDze9sdbjjNwA+1gyFFxz5QqnGEFgxTtSvit6YXjLjVVEkv02M4UkAAJkNl4zcHe4hd0mKFrwVYGzRv4wxpAxffr08+uYhmaKtQA1tFu1JXTZcMWekBuNpmJT29968=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQGNo6OdiEf6tLllrNuiLxsTANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAATgBvAHQAZQAtAFMAZQByAGcAXAQhBDUEQAQzBDUEOTAeFw0xMzEyMjMxMjUxNTdaFw0xNDEyMjMxODUxNTdaMCsxKTAnBgNVBAMeIABOAG8AdABlAC0AUwBlAHIAZwBcBCEENQRABDMENQQ5MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxHX+NJBh3wbkgGhjZ/hVYpIkN6V1nHlW0tew2vb2UuRPx0PN72x1uOM3AD7WDIUXHPlCqcYQWDFO1K+K3pheMuNVUSS/TYzhSQAAmQ2XjNwd7iF3SYoWvBVgbNG/jDGkDF9+vTz65iGZoq1ADW0W7UldNlwxZ6QG42mYlPb33rwIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAJYN31Eh0PyU8w5iEDzjoXl4pBwmRepfS7kRItvBauQYm/3NltKcNsPFEJjKYfKIDKva/YiZwc7eL+saVGaOxEmsenInXFovCNjFvPqjVN8HVXOeK0brXBc+Xu11Y4eNd8TJGmHNs27Vf0c+A72vNkuf3f45AaBUmG4b8i7yLCmf</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

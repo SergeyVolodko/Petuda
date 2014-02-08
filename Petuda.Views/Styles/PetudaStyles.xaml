@@ -1,0 +1,315 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:Petuda.Views.Converters"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <converters:DoubleMinusDoubleConverter x:Key="minusConverter"/>
+    <converters:DoublePlusDoubleConverter x:Key="plusConverter"/>
+    <converters:MultiMinusConverter x:Key="multiMinusConverter"/>
+    <converters:ConcatenateFieldsMultiValueConverter x:Key="concatConverter"/>
+    <converters:BooleanToVisibilityConverter x:Key="visibilityConverter"/>
+    <converters:BooleanToHiddenVisibilityConverter x:Key="hiddenVisibilityConverter"/>
+    <converters:IsNotNullConverter x:Key="isNotNullConverter"/>
+    <converters:IsNotNullToVisibility x:Key="isNotNullToVisiblilityConverter"/>
+    <converters:IsNullToVisibility x:Key="isNullToVisiblilityConverter"/>
+    <converters:NegationOfBooleanToVisibilityConverter x:Key="negVisibilityConverter"/>
+    <converters:BooleanToTopVeritcalAlligmentConverter x:Key="topAllignConverter"/>
+    <converters:BooleanToScriptMenuHeightConverter x:Key="menuHeightConverter"/>
+    <converters:BooleanToScriptEditorTitleConverter x:Key="scriptEditorTitleConverter"/>
+    <converters:BooleanToJokeEditorTitleConverter x:Key="jokeEditorTitleConverter"/>
+    
+    <SolidColorBrush x:Key="BorderColorBrush">#FFFC4F4F</SolidColorBrush>
+    <SolidColorBrush x:Key="FillColorBrush">White</SolidColorBrush>
+    <SolidColorBrush x:Key="AccentColorBrush">#FF0C97BF</SolidColorBrush>
+
+    <SolidColorBrush x:Key="BasicTextForeground">Black</SolidColorBrush>
+    <system:Double x:Key="BasicTextFontSize">14</system:Double>
+    <FontFamily x:Key="BasicTextFontFamily">"Sagoe UI"</FontFamily>
+    <system:Double x:Key="SubHeaderTextFontSize">16</system:Double>
+    <system:Double x:Key="FilterInputControlHeight">24</system:Double>
+    <system:Double x:Key="HeaderTextFontSize">18</system:Double>
+    <system:Double x:Key="ButtonTextFontSize">12</system:Double>
+    <system:Double x:Key="MessageContentTextFontSize">14</system:Double>
+    <system:Double x:Key="SumOfMarginsOnTheMainPage">40</system:Double>
+
+    <system:Double x:Key="JokeEditorWidth">640.0</system:Double>
+
+    <system:Double x:Key="PetudaMaxRowHeight">90.0</system:Double>
+    <GridLength x:Key="popupLabelLeftMargin">95.0</GridLength>
+    <system:Double x:Key="PetudaToolTipWidth">300.0</system:Double>
+
+    <Duration x:Key="menuMovementDuration">0:0:0.5</Duration>
+    <system:TimeSpan x:Key="menuMovementTimeSpan">0:0:0.5</system:TimeSpan>
+
+    <Style x:Key="TextBlockToolTipStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Width" Value="{StaticResource PetudaToolTipWidth}"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+    <Style x:Key="BasicTextStyle" TargetType="{x:Type Control}">
+        <Setter Property="Foreground" Value="{StaticResource BasicTextForeground}"/>
+        <Setter Property="FontSize" Value="{StaticResource BasicTextFontSize}"/>
+        <Setter Property="FontFamily" Value="{StaticResource BasicTextFontFamily}"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Margin" Value="0,0" />
+    </Style>
+
+    <Style x:Key="BasicTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource BasicTextForeground}"/>
+        <Setter Property="FontSize" Value="{StaticResource BasicTextFontSize}"/>
+        <Setter Property="FontFamily" Value="{StaticResource BasicTextFontFamily}"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="TextTrimming" Value="WordEllipsis" />
+    </Style>
+
+    <Style x:Key="ButtonTextBlockStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BasicTextBlockStyle}">
+        <Setter Property="FontSize" Value="{StaticResource ButtonTextFontSize}"/>
+    </Style>
+    <Style x:Key="MessageContentTextBlockStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BasicTextBlockStyle}">
+        <Setter Property="FontSize" Value="{StaticResource MessageContentTextFontSize}"/>
+    </Style>
+
+    <Style x:Key="LabelHeaderStyle" BasedOn="{StaticResource BasicTextStyle}" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="{StaticResource HeaderTextFontSize}"/>
+        <Setter Property="Foreground" Value="{StaticResource BorderColorBrush}" />
+    </Style>
+
+    <Style x:Key="LabelSubHeaderStyle" BasedOn="{StaticResource BasicTextStyle}" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="{StaticResource SubHeaderTextFontSize}"/>
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="TextBlockSubHeaderStyle" BasedOn="{StaticResource BasicTextBlockStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource SubHeaderTextFontSize}"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+    <Style x:Key="LabelCloseStyle" BasedOn="{StaticResource LabelHeaderStyle}" TargetType="{x:Type Label}">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Margin" Value="0,0,5,0" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    
+    <Style x:Key="StartLinkTextBlockStyle" BasedOn="{StaticResource BasicTextBlockStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="Foreground" Value="{StaticResource BorderColorBrush}" />
+        <Setter Property="TextDecorations" Value="underline" />
+        <Setter Property="Cursor" Value="Hand"/>
+        <Style.Resources>
+            <Storyboard x:Key="MouseOn">
+                <DoubleAnimation BeginTime="00:00:00"
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                To="1.03"
+                                Duration="00:00:00.1000000"
+                                />
+
+                <DoubleAnimation BeginTime="00:00:00"
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                To="1.03"
+                                Duration="00:00:00.1000000"
+                                />
+            </Storyboard>
+
+            <Storyboard x:Key="MouseOff">
+                <DoubleAnimation BeginTime="00:00:00"
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                Duration="00:00:00.1600000"/>
+
+                <DoubleAnimation BeginTime="00:00:00"
+                                Duration="00:00:00.1600000"
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                />
+            </Storyboard>
+
+            <Storyboard x:Key="LinkPressed">
+                <DoubleAnimation BeginTime="00:00:00"
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                Duration="00:00:01.00000"
+                                To="1.0"
+                                 />
+
+                <DoubleAnimation BeginTime="00:00:00"
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                Duration="00:00:01.00000"
+                                To="1.0"
+                                />
+            </Storyboard>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource MouseOff}" />
+                </Trigger.ExitActions>
+
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource MouseOn}" />
+                </Trigger.EnterActions>
+            </Trigger>
+
+            <EventTrigger RoutedEvent="MouseLeftButtonDown" >
+                <BeginStoryboard Storyboard="{StaticResource LinkPressed}" />
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="HyperLinkTextBlockStyle" BasedOn="{StaticResource StartLinkTextBlockStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource SubHeaderTextFontSize}"/>
+        <Setter Property="Foreground" Value="{StaticResource AccentColorBrush}" />
+    </Style>
+    
+    <Style x:Key="PetudaDataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="CanUserDeleteRows" Value="False"/>
+        <Setter Property="CanUserResizeRows" Value="False"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="CanUserResizeColumns" Value="False"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="AllowDrop" Value="True"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource AccentColorBrush}"/>
+        <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+        <Setter Property="HeadersVisibility" Value="Column"/>
+    </Style>
+
+    <Style x:Key="DataGridColumnHeaderStyle" BasedOn="{StaticResource BasicTextStyle}" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="FontSize" Value="{StaticResource HeaderTextFontSize}"/>
+        <Setter Property="Height" Value="45"/>
+    </Style>
+    <Style x:Key="PetudaCellStyle" BasedOn="{StaticResource BasicTextStyle}" TargetType="{x:Type DataGridCell}">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+    </Style>
+
+    <Style x:Key="InputControlBasicStyle" BasedOn="{StaticResource BasicTextStyle}" TargetType="{x:Type Control}">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+
+    </Style>
+
+    <Style x:Key="FilterInputControlBasicStyle" BasedOn="{StaticResource BasicTextStyle}" TargetType="{x:Type Control}">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="{StaticResource FilterInputControlHeight}" />
+        <Setter Property="Margin" Value="0,3,5,5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="FilterCheckBoxStyle" BasedOn="{StaticResource BasicTextStyle}" TargetType="{x:Type CheckBox}">
+        <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="MenuItemStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Foreground" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Width" Value="350" />
+        <Setter Property="Margin" Value="0,5" />
+    </Style >
+
+    <Style x:Key="FilterBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+    <Style x:Key="PopupBorderRectangleStyle" TargetType="{x:Type Rectangle}">
+        <Setter Property="Stroke" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Fill" Value="{StaticResource FillColorBrush}" />
+        <Setter Property="RadiusX" Value="5" />
+        <Setter Property="RadiusY" Value="5" />
+    </Style>
+
+    <Style x:Key="StartPageBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Background" Value="{StaticResource FillColorBrush}" />
+        <Setter Property="CornerRadius" Value="7" />
+    </Style>
+    
+    <!--Windows-->
+    <Style x:Key="MainWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="Height" Value="600" />
+        <Setter Property="MinWidth" Value="1000" />
+        <Setter Property="MinHeight" Value="600" />
+        <Setter Property="AllowDrop" Value="True" />
+        <Setter Property="Icon" Value="../Images/Application.ico" />
+        <Setter Property="WindowState" Value="Maximized" />
+    </Style>
+
+    <Style x:Key="PopupWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="Background" Value="{x:Null}" />
+    </Style>
+
+    <Style x:Key="StartPageStyle" TargetType="{x:Type Window}" BasedOn="{StaticResource PopupWindowStyle}">
+        <Setter Property="Icon" Value="../Images/Application.ico" />
+        <Setter Property="MaxWidth" Value="800" />
+        <Setter Property="MaxHeight" Value="500" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+    </Style>
+
+    <Style x:Key="JokeEditorStyle" TargetType="{x:Type Window}" BasedOn="{StaticResource PopupWindowStyle}">
+        <Setter Property="Height" Value="680" />
+        <Setter Property="Width" Value="{StaticResource JokeEditorWidth}" />
+        <Setter Property="Icon" Value="../Images/edit.png" />
+    </Style>
+
+    <Style x:Key="MessageWindowStyle" TargetType="{x:Type Window}" BasedOn="{StaticResource PopupWindowStyle}">
+        <Setter Property="Height" Value="220" />
+        <Setter Property="Width" Value="520" />
+        <Setter Property="Icon" Value="../Images/warning.png" />
+    </Style>
+
+    <Style x:Key="ScriptEditorStyle" TargetType="{x:Type Window}" BasedOn="{StaticResource PopupWindowStyle}">
+        <Setter Property="Height" Value="260" />
+        <Setter Property="Width" Value="640" />
+        <Setter Property="Icon" Value="../Images/edit.png" />
+    </Style>
+
+    <Style x:Key="UnderlineDatagridHeader"  TargetType="{x:Type Rectangle}">
+        <Setter Property="Height" Value="2" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Fill" Value="{StaticResource BorderColorBrush}" />
+    </Style>
+    
+    <!--User controls-->
+    <Style x:Key="GenerateWorDocumentMenuStyle" TargetType="{x:Type Menu}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="50,0,0,0" />
+        <Setter Property="Background" Value="{StaticResource FillColorBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource AccentColorBrush}" />
+    </Style>
+    
+    <!--Dragging joke popup styles-->
+    <Style x:Key="DraggingJokePopupBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource FillColorBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+
+    <Style x:Key="DraggingJokePopupTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+</ResourceDictionary>
