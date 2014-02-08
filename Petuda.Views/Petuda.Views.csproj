@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F440D017-B478-457B-AB28-89A003163094}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Petuda.Views</RootNamespace>
+    <AssemblyName>Petuda.Views</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://www.dropbox.com/sh/pwxmkqsax5205sf/txoYz0FNr2/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Application.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4553AF2F4918305232EB332635D0AFF20CA75C41</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Petuda.Views_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\DragJokePopupContent.xaml.cs">
+      <DependentUpon>DragJokePopupContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScriptContent.xaml.cs">
+      <DependentUpon>ScriptContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScriptPanel.xaml.cs">
+      <DependentUpon>ScriptPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UpdatePage.xaml.cs">
+      <DependentUpon>UpdatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BooleanToBlankImageConverter.cs" />
+    <Compile Include="Converters\BooleanToScriptMenuHeightConverter.cs" />
+    <Compile Include="Converters\BooleanToTopVeritcalAlligmentConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\ConcatenateFieldsMultiValueConverter .cs" />
+    <Compile Include="Converters\BooleanToHiddenVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanToJokeEditorTitleConverter.cs" />
+    <Compile Include="Converters\BooleanToScriptEditorTitleConverter.cs" />
+    <Compile Include="Converters\ZeroCountToVisibilityConverter.cs" />
+    <Compile Include="Converters\IsNullToVisibilityConverter.cs" />
+    <Compile Include="Converters\IsNotNullToVisibilityConverter.cs" />
+    <Compile Include="Converters\DataGridAndRowToIndexMultiConverter.cs" />
+    <Compile Include="Converters\RowToIndexConverter.cs" />
+    <Compile Include="Converters\DoubleMinusDoubleConverter.cs" />
+    <Compile Include="Converters\DoublePlusDoubleConverter.cs" />
+    <Compile Include="Converters\IsNotNullConverter.cs" />
+    <Compile Include="Converters\MultiANDConverter.cs" />
+    <Compile Include="Converters\MultiMinusConverter.cs" />
+    <Compile Include="Converters\NegationOfBooleanToVisibilityConverter.cs" />
+    <Compile Include="DocumentView\Generators\JokeTitleMode.cs" />
+    <Compile Include="DocumentView\Generators\WordDocumentGenerator.cs" />
+    <Compile Include="DocumentView\WordDocument.cs" />
+    <Compile Include="Helpers\PetudaVisualTreeHelper.cs" />
+    <Compile Include="MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptEditor.xaml.cs">
+      <DependentUpon>ScriptEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SingleInstance.cs" />
+    <Compile Include="StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\DragJokePopupContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ScriptContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ScriptPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UpdatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JokeEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScriptEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\PetudaButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\PetudaExpander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\PetudaStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JokeEditor.xaml.cs">
+      <DependentUpon>JokeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\PetudaNavigationService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Images\Thumbs.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Application.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blank_inverted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\down_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\puzzle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\scissor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\scripts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\television.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\up_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\word.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Application.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Petuda.Model.DDD\Petuda.Model.DDD.csproj">
+      <Project>{78D50131-CEF0-40A9-87E1-7652ED4B9FC3}</Project>
+      <Name>Petuda.Model.DDD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Petuda.ViewModels\Petuda.ViewModels.csproj">
+      <Project>{7e03541b-90a9-4ad9-8ca6-d801a3d5f036}</Project>
+      <Name>Petuda.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Images\SplashScreen.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
