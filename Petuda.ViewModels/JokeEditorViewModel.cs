@@ -11,6 +11,7 @@ using Petuda.ViewModels.Events;
 using Petuda.ViewModels.Helpers;
 using Petuda.ViewModels.Navigation;
 using Petuda.ViewModels.Resources;
+using Petuda.ViewModels.ViewModelsFactory;
 using PetudaDAL.XML.Exceptions;
 
 namespace Petuda.ViewModels
@@ -207,20 +208,24 @@ namespace Petuda.ViewModels
             try
             {
                 var tags = StringHelper.Split(this.Tags);
-                
+
                 var newJoke = jokeService.CreateJoke(this.Name, this.Theme, this.Text, tags.ToList());
-                
+
                 EventsBus.Instance.RaiseJokeCreated(newJoke.ID);
             }
             catch (MissingRequiredField)
             {
                 this.NameIsNotValid = true;
             }
-            catch (SaveFileException ex)
+            catch (JokeCantBeCreatedException ex)
             {
-                ErrorHelper.ShowErrorMessage(this.navigationService, Strings.Error, String.Format(Strings.CantWriteFileErrorMessage, ex.FileName));
+                ErrorHelper.ShowErrorMessage(this.navigationService, Strings.Error, String.Format(Strings.CantWriteFileErrorMessage, "Jokes.xml"));
+                ReopenEditor(ex.Joke);
             }
-
+            //catch (SaveFileException ex)
+            //{
+            //    ErrorHelper.ShowErrorMessage(this.navigationService, Strings.Error, String.Format(Strings.CantWriteFileErrorMessage, ex.FileName));
+            //}
         }
 
         private void UpdateJoke()
@@ -240,7 +245,15 @@ namespace Petuda.ViewModels
             catch (SaveFileException ex)
             {
                 ErrorHelper.ShowErrorMessage(this.navigationService, Strings.Error, String.Format(Strings.CantWriteFileErrorMessage, ex.FileName));
+                ReopenEditor(this.inputJoke);
             }
+        }
+
+        private void ReopenEditor(Joke joke)
+        {
+            var viewModel = PetudaViewModelsFactory.CreateJokeEditorViewModel(this.navigationService, (Joke)joke.Clone());
+
+            this.navigationService.OpenJokeEditor(viewModel);
         }
 
     }//class

@@ -18,3 +18,8 @@ E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\bin\Debug\Petuda.Model.D
 E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Debug\Petuda.Model.DDD.dll
 E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Debug\Petuda.Model.DDD.pdb
 E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.Model.DDD\obj\Debug\Petuda.Model.DDD.csprojResolveAssemblyReference.cache
+E:\Projects\GitHub\Petuda\Petuda.Model.DDD\bin\Debug\Petuda.Model.DDD.dll
+E:\Projects\GitHub\Petuda\Petuda.Model.DDD\bin\Debug\Petuda.Model.DDD.pdb
+E:\Projects\GitHub\Petuda\Petuda.Model.DDD\obj\Debug\Petuda.Model.DDD.csprojResolveAssemblyReference.cache
+E:\Projects\GitHub\Petuda\Petuda.Model.DDD\obj\Debug\Petuda.Model.DDD.dll
+E:\Projects\GitHub\Petuda\Petuda.Model.DDD\obj\Debug\Petuda.Model.DDD.pdb

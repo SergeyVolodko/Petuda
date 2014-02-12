@@ -42,3 +42,14 @@ E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.ViewModels\obj\Debug\Petuda.ViewMo
 E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.ViewModels\obj\Debug\Petuda.ViewModels.csproj.GenerateResource.Cache
 E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.ViewModels\obj\Debug\Petuda.ViewModels.dll
 E:\Dropbox\Dropbox\PetudaDDD\PetudaDDD\Petuda.ViewModels\obj\Debug\Petuda.ViewModels.pdb
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\bin\Debug\Petuda.ViewModels.dll
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\bin\Debug\Petuda.ViewModels.pdb
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\bin\Debug\Petuda.Model.DDD.dll
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\bin\Debug\PetudaDAL.dll
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\bin\Debug\Petuda.Model.DDD.pdb
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\bin\Debug\PetudaDAL.pdb
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\obj\Debug\Petuda.ViewModels.csprojResolveAssemblyReference.cache
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\obj\Debug\Petuda.ViewModels.Resources.Strings.resources
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\obj\Debug\Petuda.ViewModels.csproj.GenerateResource.Cache
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\obj\Debug\Petuda.ViewModels.dll
+E:\Projects\GitHub\Petuda\Petuda.ViewModels\obj\Debug\Petuda.ViewModels.pdb

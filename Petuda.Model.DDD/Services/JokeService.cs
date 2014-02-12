@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Petuda.Model.DDD.Exceptions;
 using Petuda.Model.DDD.Factories;
 using Petuda.Model.DDD.Repositories;
 
@@ -63,7 +64,14 @@ namespace Petuda.Model.DDD.Services
         {
             var joke = this.jokeFactory.Create(name, theme, text, tags);
 
-            this.jokeRepository.Save(joke);
+            try
+            {
+                this.jokeRepository.Save(joke);
+            }
+            catch (Exception)
+            {
+                throw new JokeCantBeCreatedException(joke);
+            }
 
             return joke;
         }

@@ -50,19 +50,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qQ9V7Fp0BktIGGD4NZGzMf9m+pQ=</dsig:DigestValue>
+        <dsig:DigestValue>gQKqDg98mlmWzyHQq57Bz2/h2XQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Petuda.ViewModels.dll" size="52736">
-      <assemblyIdentity name="Petuda.ViewModels" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Petuda.ViewModels.dll" size="53248">
+      <assemblyIdentity name="Petuda.ViewModels" version="1.0.0.2" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ZoAzgW3WPPYoVUWMPKmJuozBaUA=</dsig:DigestValue>
+        <dsig:DigestValue>Es9xZIV1XT76O3jK6LPIZJPrDtk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>YrmxEUGSEgy1ZNJS/qHXI6J5NA8=</dsig:DigestValue>
+        <dsig:DigestValue>7F/VX6CVaG4MXogY3dO9ma8VhG8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>bEyCr9zCnNpjz0BUxDjwNWIwfck=</dsig:DigestValue>
+        <dsig:DigestValue>LJT1tUGdjJ7YFJZNmjGAVvFG3gQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

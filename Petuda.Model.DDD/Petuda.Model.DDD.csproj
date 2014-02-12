@@ -39,6 +39,7 @@
     <Compile Include="DALContracts\IJokeDao.cs" />
     <Compile Include="DALContracts\IPetudaDAO.cs" />
     <Compile Include="DALContracts\IScriptDao.cs" />
+    <Compile Include="Exceptions\JokeCantBeCreatedException.cs" />
     <Compile Include="Exceptions\JokeCantBeDeletedException.cs" />
     <Compile Include="Exceptions\ScriptAlreadyContainsJokeException.cs" />
     <Compile Include="Exceptions\MissingEntityException.cs" />
